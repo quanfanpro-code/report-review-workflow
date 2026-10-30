@@ -7,9 +7,9 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_skill_refs_exist():
-    # 扫描运行时指引文件：SKILL.md 与第二步指引（均从包根出发引用 references/... 路径）
+    # 扫描运行时指引文件：SKILL.md 与文字审查速查（均从包根出发引用 references/... 路径）
     checked = []
-    for name in ("SKILL.md", "references/financial-data-check.md"):
+    for name in ("SKILL.md", "references/文字审查速查.md"):
         text = (ROOT / name).read_text(encoding="utf-8")
         checked += [(name, r) for r in re.findall(r"references/[\w\-/\.]+\.(?:md|json)", text)]
     missing = [f"{src} -> {r}" for src, r in checked if not (ROOT / r).exists()]
