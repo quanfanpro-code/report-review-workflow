@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "synced_at": "2026-10-30T23:40:00+08:00",
+  "runtime_policy": {
+    "self_contained": true,
+    "external_skill_directories_allowed": false,
+    "upstream_metadata_is_runtime_dependency": false,
+    "missing_local_reference_behavior": "stop_with_bundle_integrity_error"
+  },
+  "sources": [
+    {
+      "id": "audit-report-checker",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/audit-report-checker",
+      "local_path": "references/audit-report-checker",
+      "synced_at": "2026-10-30",
+      "license": "AGPL-3.0",
+      "notes": "docs/ 大样本未搬；文字留痕见 docs/upstream-records/audit-report-checker/"
+    },
+    {
+      "id": "tianchuan-perspective",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/tianchuan-perspective",
+      "local_path": "references/tianchuan-perspective",
+      "synced_at": "2026-10-30",
+      "license": "MIT"
+    },
+    {
+      "id": "chen-yiwei-perspective",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/chen-yiwei-perspective",
+      "local_path": "references/chen-yiwei-perspective",
+      "synced_at": "2026-10-30",
+      "license": "MIT"
+    },
+    {
+      "id": "writing",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/writing",
+      "local_path": "references/writing",
+      "synced_at": "2026-10-30",
+      "license": "MIT"
+    },
+    {
+      "id": "humanizer-zh",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/humanizer-zh",
+      "local_path": "references/humanizer-zh",
+      "synced_at": "2026-10-30",
+      "license": "MIT",
+      "notes": "用户口称 humanizer-cn，技能库实名 humanizer-zh"
+    },
+    {
+      "id": "human-writing",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/human-writing",
+      "local_path": "references/human-writing",
+      "synced_at": "2026-10-30",
+      "license": "MIT",
+      "notes": "dist/ assets/ agents/ 构建产物未搬（ADR-0003）"
+    },
+    {
+      "id": "officecli-huaxin-format",
+      "original_path": "D:/BaiduSyncdisk/workbuddy skills/officecli-huaxin-format",
+      "local_path": "references/officecli-huaxin-format",
+      "synced_at": "2026-10-30",
+      "license": "AGPL-3.0（权利人授权并入）",
+      "notes": "原文无许可声明，经权利人确认授权并入"
+    }
+  ],
+  "excluded_sources": [
+    {
+      "id": "private-equity-investment-dd",
+      "reason": "保留所有权利、仅供私用，与公开分发不兼容；内容未整合，第五步标注未整合并降级（ADR-0001）"
+    }
+  ]
+}

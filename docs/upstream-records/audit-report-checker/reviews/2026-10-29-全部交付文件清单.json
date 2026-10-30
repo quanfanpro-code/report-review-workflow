@@ -1,0 +1,222 @@
+﻿[
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\CONTEXT.md",
+    "change": "原文件",
+    "sha256": "10932f44c02ace5957a6b9b5fb2364b086ce01922a1babe1858c12ed020fb389"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\pytest.ini",
+    "change": "新增文件",
+    "sha256": "bf2cde9f685dd3acbc670a76c49a593b03f539744374a9c881110bb688dbb980"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\SKILL.md",
+    "change": "原文件",
+    "sha256": "22bb20ce707218e59a36cfad8b4bfd303c389c21719cd11f9f268b6d4a3129d0"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\extraction.md",
+    "change": "原文件",
+    "sha256": "572a13b92f5b0fdb4a6173b7ea102c4b538fe7791c4fa6049a328fe875759a4c"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\manifest_template.md",
+    "change": "原文件",
+    "sha256": "b084576aa320f096e742aba82934d655c08f487c0e3c9291d7ea2062e68e97a5"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\mineru_usage.md",
+    "change": "原文件",
+    "sha256": "ee72bf20ce1682324c2669b4627e478488e89a05c78bf2e780210d0428c294bf"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\rules.md",
+    "change": "原文件",
+    "sha256": "4a4e1d07c847e8d126a42b83426a1e716dc92953ef8287c2c4d5a12dedbd6b5a"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\structure_annotation.md",
+    "change": "原文件",
+    "sha256": "cfe50ae2f5152e0cd7a2f4a9bd756dd804b64a90144c12c791cbdc82e986133f"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\references\\user_rules.md",
+    "change": "原文件",
+    "sha256": "f6377a9ae61fb07a0e96fb8708e16312a4f37fea5170f2de6a87d96f105ee63e"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\ai_worker.py",
+    "change": "原文件",
+    "sha256": "7c130c75e4a668f402a08ca4915bf5fa8eb88ec7ca999d0fe9c0a25fa9fcfaa3"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\apply_manifest.py",
+    "change": "原文件",
+    "sha256": "7803558fc969851b78a764513ffc78fccfec9432afb50831a4a2cd91ddaa3eeb"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\calculator.py",
+    "change": "原文件",
+    "sha256": "644e6829bbbfde97202568873c14dd9131c175c09be439d6608294617b997cd9"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\calculator_rules.py",
+    "change": "原文件",
+    "sha256": "449e755aae0468f03a541f5e07d3363da13d41d53be4c945242ec1dddafefc52"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\export_report.py",
+    "change": "原文件",
+    "sha256": "ea80c608972e073c9017c920f050b49bfddc0e5c6c0801b89ef6af2eecfcd8b2"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\parse_report.py",
+    "change": "原文件",
+    "sha256": "54a0ff8ce5dfb6034c115e7d4ee9df25b146d65398fd8caa25899095b659c74e"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\run_check.py",
+    "change": "原文件",
+    "sha256": "bf7629727b92aa3dee62f18e61fab0f897a775232313ad7c34b0d34914dbaf6e"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\复核任务.py",
+    "change": "新增文件",
+    "sha256": "7ae855073c94d6003bc64b4ee7e5a10779fac1846b1e7c5b499508251b6dd163"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\复核契约.py",
+    "change": "新增文件",
+    "sha256": "56a542fc23babfd77d6563eefc1f80dc490b64aa5a0947ba4089107054130c00"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\conftest.py",
+    "change": "新增文件",
+    "sha256": "4ff159c57a0720b96c3fac9f2da4c9cf5a80fd3d4382da73bfbc728fa183408d"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_取数.py",
+    "change": "新增文件",
+    "sha256": "daf906516f9fffb0c3f328e7ab08628964c2fd25320b62c262cd767d2cd92885"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_复核任务.py",
+    "change": "新增文件",
+    "sha256": "a63a0bc8fc3d260290a876ebec9d800fd3428a4d3e5effc001f91183afd1e28b"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_导出.py",
+    "change": "新增文件",
+    "sha256": "b38a6f28535cbf6f30e0cdff73969f5da393073c7bcb4fc747dab80a80da6187"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_报表规则.py",
+    "change": "新增文件",
+    "sha256": "2eb534642bba66a0d4223f115e28a5bfd17d92ba75a838855c38551f22e350f1"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_文件保护.py",
+    "change": "新增文件",
+    "sha256": "849262e597a75533db280c61595d35b2e7938f84e065b6ec26fc662cd3cefbb1"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_真实格式.py",
+    "change": "新增文件",
+    "sha256": "6698fdeef9ff000c2640598bbcbaa62f551e8910fe1d252cba04ebdc352af090"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_离线流程.py",
+    "change": "新增文件",
+    "sha256": "c94c36051aac046282fab303c8cddcad9a563c930e1e3ddff7bc61e5ed6d4879"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_算术.py",
+    "change": "新增文件",
+    "sha256": "c6a484b10b89dc4e2a03aa1b49b0c20941de122ce26f366fcddf39921154e908"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\tests\\测试_结构标注.py",
+    "change": "新增文件",
+    "sha256": "46f2f652355a5e8705de6828da99c8a3bd9e2b7039bf104537e37b6946747387"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\extractors\\base.py",
+    "change": "原文件",
+    "sha256": "8cd85bb00558c8a21f953e2a7e243bb9ce2a82eb925abf513d5966b98ff4f5c9"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\extractors\\docx.py",
+    "change": "原文件",
+    "sha256": "8beaa664b3f390d67bdd7768ae5241b32b0607127897d830c296f972f7f97915"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\extractors\\xlsx.py",
+    "change": "原文件",
+    "sha256": "e1633e1112f6a4306562864dbe5f9da71d7dbf784a1f13c6b790fc7ad5fd4711"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\scripts\\extractors\\__init__.py",
+    "change": "原文件",
+    "sha256": "15f5ac5195775e598ea0e6e1e51fbfcbb717d25badf1119006db970d2540b4d8"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\requirements\\2026-10-29-审计报告复核技能全面审查-需求.md",
+    "change": "原文件",
+    "sha256": "519340de547468e32b181377d9c2f2f483da7b7959e3fb6e3c6313218874d984"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\2026-10-29-全量审查记录.md",
+    "change": "新增文件",
+    "sha256": "a8dc7be443b2e11599bc7da9ff50d9be3279f210695d78451db222d2fd17f0a2"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\2026-10-29-文件差异与备份证据.json",
+    "change": "新增文件",
+    "sha256": "14b3fed07bdfdb290e722a99d8c3280ab3baaaba1086b808f753f78f72037d9e"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\2026-10-29-方案设计阶段取证.md",
+    "change": "原文件",
+    "sha256": "5e71e9816cfd7dbf399cc0c9d9453beba46abb4ea5ec4047e1b8ead60cfa48f7"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\2026-10-29-最终测试输出.txt",
+    "change": "新增文件",
+    "sha256": "36d44beb1ace44c1fd6614f1fbb5798463cdb8670ff0ddb139b2956b011efb8f"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\2026-10-29-最终验收记录.md",
+    "change": "新增文件",
+    "sha256": "3ca83a9011b4183c75a252afba0cd74bc5c4263b620474773296b4de675d52b7"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\合成样例验收.py",
+    "change": "新增文件",
+    "sha256": "0735b010581b39c2af5d2f16c02b642e4e6d44fdafaf118ecc71cb0f7ddb8927"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\当前agent样例终审.py",
+    "change": "新增文件",
+    "sha256": "e1d3a2545797d7facda691f3050ba3f79700427ef9b263d0971d09f81f547d9f"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\核对导出显示.py",
+    "change": "新增文件",
+    "sha256": "b87b75a5fca47cef13071544e0deca287d4ea909a9af5997fffcc7c5b77d4db0"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\reviews\\生成最终验收记录.py",
+    "change": "新增文件",
+    "sha256": "9126d2c145932a5fef93a0f58e34994ee6cbb9c72ea967c3ef7abae6c6f55996"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\superpowers\\plans\\2026-10-29-审计报告复核技能整改实施计划.md",
+    "change": "原文件",
+    "sha256": "290392a4f318e747e56e76b2a583e5402c57602cfc001755cbfd6a047adb11ad"
+  },
+  {
+    "path": "C:\\BaiduSyncdisk\\workbuddy skills\\audit-report-checker\\docs\\superpowers\\specs\\2026-10-29-审计报告复核技能全面审查-design.md",
+    "change": "原文件",
+    "sha256": "9e6c7e42d52fe57b306c5d3e23db0316612a62a48fc144d79ad7dee71d0ead70"
+  }
+]

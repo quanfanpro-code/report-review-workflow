@@ -1,0 +1,37 @@
+第三方组件声明
+================
+
+本项目（report-review-workflow）是一个技能捆绑包（skill bundle），
+核心编排层（SKILL.md 及 scripts/、tests/ 中本包自有部分）为原创作品，
+采用 GNU Affero General Public License v3.0（AGPL-3.0）协议发布，
+完整协议见项目根目录 LICENSE 文件。
+
+本项目的 references/ 目录包含来自以下第三方项目的资料，
+它们保留各自的原始许可证，独立于本项目的整体 AGPL-3.0 授权。
+项目许可证全文见 references/licenses/ 目录。
+
+引用的第三方项目：
+-------------------
+
+| 项目 | 原作者/权利人 | 许可证 | 说明 |
+|------|--------------|--------|------|
+| audit-report-checker | quanfanpro-code | AGPL-3.0 | 原创技能，数据核对能力来源 |
+| tianchuan-perspective | tianchuan-perspective skill authors | MIT | 审计逻辑审查视角 |
+| chen-yiwei-perspective | chen-yiwei-perspective skill authors | MIT | 会计准则审查视角 |
+| writing | writing skill authors | MIT | 写作规范 |
+| humanizer-zh | 歸藏 | MIT | 去 AI 味文字规范 |
+| human-writing | Human Writing Skill contributors | MIT | 活人感写作规范 |
+| officecli-huaxin-format | 四川华信(集团)会计师事务所标准（权利人授权） | 由权利人授权并入 AGPL-3.0 | 原文无许可声明，经权利人明确授权并入并公开分发 |
+
+排除的第三方项目：
+-------------------
+
+| 项目 | 原因 |
+|------|------|
+| private-equity-investment-dd | 许可为"保留所有权利、仅供私用"，与公开分发不兼容。其内容未整合，七步法第五步标注"该视角未整合"并降级为手动检查。 |
+
+同步与维护：
+----------
+
+各来源的原始路径、同步日期见 references/SOURCES.json。
+上游更新后需手动同步对应子目录，并更新台账日期。

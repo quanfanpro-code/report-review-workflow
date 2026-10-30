@@ -1,0 +1,186 @@
+﻿[
+  {
+    "path": "SKILL.md",
+    "sha256": "c2d614870b6d897a7b57e7bf6c45a433905cfca87cc54120eaf91549b9473570",
+    "lines": 388,
+    "current_sha256": "22bb20ce707218e59a36cfad8b4bfd303c389c21719cd11f9f268b6d4a3129d0",
+    "changed": true,
+    "current_lines": 71
+  },
+  {
+    "path": "CONTEXT.md",
+    "sha256": "1d05ec8a89df9423b4a5039fe008ec6be5652325fa02e900c90febb19f654d4c",
+    "lines": 35,
+    "current_sha256": "10932f44c02ace5957a6b9b5fb2364b086ce01922a1babe1858c12ed020fb389",
+    "changed": true,
+    "current_lines": 39
+  },
+  {
+    "path": "scripts\\ai_worker.py",
+    "sha256": "7e2845bbec9bca1ce1f02aa765bbcd7dc122e41cf4e2bd898c2c9ac45321a943",
+    "lines": 2236,
+    "current_sha256": "7c130c75e4a668f402a08ca4915bf5fa8eb88ec7ca999d0fe9c0a25fa9fcfaa3",
+    "changed": true,
+    "current_lines": 9
+  },
+  {
+    "path": "scripts\\apply_manifest.py",
+    "sha256": "d26a9f80813c8f2541bb20051f6cf482364da4f8d6b84f28c7840a1a4146d252",
+    "lines": 154,
+    "current_sha256": "7803558fc969851b78a764513ffc78fccfec9432afb50831a4a2cd91ddaa3eeb",
+    "changed": true,
+    "current_lines": 123
+  },
+  {
+    "path": "scripts\\calculator.py",
+    "sha256": "3cb53384a4cd8b07d5b02dd0fbecc3bad46c41e743f8ed92c2e72cccb7bb8271",
+    "lines": 414,
+    "current_sha256": "644e6829bbbfde97202568873c14dd9131c175c09be439d6608294617b997cd9",
+    "changed": true,
+    "current_lines": 140
+  },
+  {
+    "path": "scripts\\calculator_rules.py",
+    "sha256": "6882c25da7c23cc016dbff441202b01095437075e311962c87b393805d06bebf",
+    "lines": 817,
+    "current_sha256": "449e755aae0468f03a541f5e07d3363da13d41d53be4c945242ec1dddafefc52",
+    "changed": true,
+    "current_lines": 140
+  },
+  {
+    "path": "scripts\\export_report.py",
+    "sha256": "35033c430a56e6f05e4b5fda5e81098178dba1d9ad617dde7b374cdf3b7970f7",
+    "lines": 1029,
+    "current_sha256": "ea80c608972e073c9017c920f050b49bfddc0e5c6c0801b89ef6af2eecfcd8b2",
+    "changed": true,
+    "current_lines": 145
+  },
+  {
+    "path": "scripts\\extractors\\__init__.py",
+    "sha256": "15f5ac5195775e598ea0e6e1e51fbfcbb717d25badf1119006db970d2540b4d8",
+    "lines": 1,
+    "current_sha256": "15f5ac5195775e598ea0e6e1e51fbfcbb717d25badf1119006db970d2540b4d8",
+    "changed": false,
+    "current_lines": 1
+  },
+  {
+    "path": "scripts\\extractors\\base.py",
+    "sha256": "bc205b59624ea783be1bb29f45bf2a8671dd6dcf18dfe5b3dcaa17b7b3e1e4fc",
+    "lines": 144,
+    "current_sha256": "8cd85bb00558c8a21f953e2a7e243bb9ce2a82eb925abf513d5966b98ff4f5c9",
+    "changed": true,
+    "current_lines": 44
+  },
+  {
+    "path": "scripts\\extractors\\docx.py",
+    "sha256": "c6024d15358825adafaf579e0710290095c2d8b23d7b9965285c4250f9fa7bcb",
+    "lines": 77,
+    "current_sha256": "8beaa664b3f390d67bdd7768ae5241b32b0607127897d830c296f972f7f97915",
+    "changed": true,
+    "current_lines": 24
+  },
+  {
+    "path": "scripts\\extractors\\xlsx.py",
+    "sha256": "b41df939f1bc8d1834775581f340eaa7e2fdb081b61ff88c17dc59fdf00f171d",
+    "lines": 27,
+    "current_sha256": "e1633e1112f6a4306562864dbe5f9da71d7dbf784a1f13c6b790fc7ad5fd4711",
+    "changed": true,
+    "current_lines": 21
+  },
+  {
+    "path": "scripts\\parse_report.py",
+    "sha256": "61e6e271917eb74fb39c431f7f6372dd09091ea66d0911dd6ae00459e807ae2e",
+    "lines": 979,
+    "current_sha256": "54a0ff8ce5dfb6034c115e7d4ee9df25b146d65398fd8caa25899095b659c74e",
+    "changed": true,
+    "current_lines": 190
+  },
+  {
+    "path": "scripts\\run_check.py",
+    "sha256": "6415ef0260c5d817aab26936d332fe61ce192e34bc4d2711f74f7604e910325c",
+    "lines": 2722,
+    "current_sha256": "bf7629727b92aa3dee62f18e61fab0f897a775232313ad7c34b0d34914dbaf6e",
+    "changed": true,
+    "current_lines": 367
+  },
+  {
+    "path": "references\\extraction.md",
+    "sha256": "b2c9cc8e894573a3b17693afe1cad707c168461fa303122a375bf4c53a898b40",
+    "lines": 157,
+    "current_sha256": "572a13b92f5b0fdb4a6173b7ea102c4b538fe7791c4fa6049a328fe875759a4c",
+    "changed": true,
+    "current_lines": 15
+  },
+  {
+    "path": "references\\manifest_template.md",
+    "sha256": "39ea40af709f5686f325288123fb10c6f8a3bfd2a1f0bec43a9655121940d093",
+    "lines": 117,
+    "current_sha256": "b084576aa320f096e742aba82934d655c08f487c0e3c9291d7ea2062e68e97a5",
+    "changed": true,
+    "current_lines": 35
+  },
+  {
+    "path": "references\\mineru_usage.md",
+    "sha256": "ecafa55d9b5dcb5289291b8348d3134e886ac4fb21acac699f145831fbdf2d48",
+    "lines": 227,
+    "current_sha256": "ee72bf20ce1682324c2669b4627e478488e89a05c78bf2e780210d0428c294bf",
+    "changed": true,
+    "current_lines": 11
+  },
+  {
+    "path": "references\\rules.md",
+    "sha256": "957a809d038fce10cc0e968d63a30d09f46708d38cb81411cf656e78a230895c",
+    "lines": 196,
+    "current_sha256": "4a4e1d07c847e8d126a42b83426a1e716dc92953ef8287c2c4d5a12dedbd6b5a",
+    "changed": true,
+    "current_lines": 209
+  },
+  {
+    "path": "references\\structure_annotation.md",
+    "sha256": "6fd6bf00d24921fe310edcb9281b361405bcba466774b8296232f7e456b51d18",
+    "lines": 407,
+    "current_sha256": "cfe50ae2f5152e0cd7a2f4a9bd756dd804b64a90144c12c791cbdc82e986133f",
+    "changed": true,
+    "current_lines": 41
+  },
+  {
+    "path": "references\\user_rules.md",
+    "sha256": "e449b877e0ea3406be2332546ded5d23eeec1adf374d024f0d35140e2530ebad",
+    "lines": 56,
+    "current_sha256": "f6377a9ae61fb07a0e96fb8708e16312a4f37fea5170f2de6a87d96f105ee63e",
+    "changed": true,
+    "current_lines": 58
+  },
+  {
+    "path": "docs\\requirements\\2026-10-29-审计报告复核技能全面审查-需求.md",
+    "sha256": "2f821fddeb4766337f05644758682d0c7f5f0c36770ee96ff87e9c742034446b",
+    "lines": 82,
+    "current_sha256": "519340de547468e32b181377d9c2f2f483da7b7959e3fb6e3c6313218874d984",
+    "changed": true,
+    "current_lines": 86
+  },
+  {
+    "path": "docs\\reviews\\2026-10-29-方案设计阶段取证.md",
+    "sha256": "5e71e9816cfd7dbf399cc0c9d9453beba46abb4ea5ec4047e1b8ead60cfa48f7",
+    "lines": 69,
+    "current_sha256": "5e71e9816cfd7dbf399cc0c9d9453beba46abb4ea5ec4047e1b8ead60cfa48f7",
+    "changed": false,
+    "current_lines": 69
+  },
+  {
+    "path": "docs\\superpowers\\plans\\2026-10-29-审计报告复核技能整改实施计划.md",
+    "sha256": "a1f93d72dce2eac68a60ffcee328a06fcfd025a20168361b338ee1a51ecb6212",
+    "lines": 368,
+    "current_sha256": "290392a4f318e747e56e76b2a583e5402c57602cfc001755cbfd6a047adb11ad",
+    "changed": true,
+    "current_lines": 372
+  },
+  {
+    "path": "docs\\superpowers\\specs\\2026-10-29-审计报告复核技能全面审查-design.md",
+    "sha256": "7f371339a232ce5020a0894700e8a575bffc70ccda0f52cfca4c43633cb7c450",
+    "lines": 107,
+    "current_sha256": "9e6c7e42d52fe57b306c5d3e23db0316612a62a48fc144d79ad7dee71d0ead70",
+    "changed": true,
+    "current_lines": 111
+  }
+]
