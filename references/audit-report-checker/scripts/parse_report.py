@@ -1,4 +1,4 @@
-﻿"""本地提取原始资料并保留缺失清单；不自动调用模型或云端。"""
+"""本地提取原始资料并保留缺失清单；不自动调用模型或云端。"""
 import argparse
 import re
 import shutil
@@ -110,15 +110,33 @@ def _process_xlsx(path,rel):
     import openpyxl
     cached=openpyxl.load_workbook(path,data_only=True,read_only=True)
     formulas=openpyxl.load_workbook(path,data_only=False,read_only=True)
+    layout=openpyxl.load_workbook(path,read_only=False)
     blocks=[];tables=[];pending=[]
     try:
         for sn in cached.sheetnames:
+            visibility=formulas[sn].sheet_state
+            if visibility != "visible":
+                pending.append({"source_file":rel,"sheet":sn,"visibility":visibility,"reason":"隐藏工作表默认不属于报出资料，不读取、不参与复核；如需核对请先确认并取消隐藏"})
+                continue
+            hidden_rows=set();hidden_cols=set()
+            sheet_layout=layout[sn]
+            for idx,dim in sheet_layout.row_dimensions.items():
+                if dim.hidden:hidden_rows.add(idx-1)
+            for letter,dim in sheet_layout.column_dimensions.items():
+                if dim.hidden:
+                    from openpyxl.utils import column_index_from_string
+                    start=dim.min or column_index_from_string(letter)
+                    hidden_cols.update(range(start-1,(dim.max or start)))
+            if hidden_rows or hidden_cols:
+                pending.append({"source_file":rel,"sheet":sn,"reason":"隐藏行或隐藏列默认不属于报出资料，不读取、不参与复核；如需核对请先确认并取消隐藏"})
             rows=[];formula_cells={}
             cached_rows=iter(cached[sn].iter_rows(values_only=True))
             for r,row in enumerate(formulas[sn].iter_rows()):
                 cache_row=next(cached_rows,())
+                if r in hidden_rows:continue
                 values=[]
                 for c,cell in enumerate(row):
+                    if c in hidden_cols:continue
                     value=cache_row[c] if c<len(cache_row) else None
                     if cell.data_type=="f":
                         formula_cells[f"{r},{c}"]={"formula":cell.value,"cached":value}
@@ -127,7 +145,7 @@ def _process_xlsx(path,rel):
                 rows.append(values)
             table={"headers":[],"rows":rows,"row_model":"all_raw","source_file":rel,"sheet":sn,"page":None,"method":"openpyxl","name":sn,"formulas":formula_cells}
             tables.append(table);blocks.append({"table":table,"part":sn})
-    finally:cached.close();formulas.close()
+    finally:cached.close();formulas.close();layout.close()
     return blocks,tables,pending
 
 def _process_mineru(path,rel,out_dir,*,allow_cloud_ocr=False,pages=None):

@@ -1,4 +1,4 @@
-﻿"""离线草筛及显式关系验算；语义工作与终审由当前agent完成。"""
+"""离线草筛及显式关系验算；语义工作与终审由当前agent完成。"""
 import argparse
 import re
 from datetime import datetime
@@ -237,23 +237,23 @@ def _marker(text,position):
     match=sources[-1];page=re.search(r"page=(\d+)",match.group(2))
     return {"source_file":match.group(1),"page":int(page.group(1)) if page else None}
 
-def check_page_continuity(report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig");files={}
+def check_page_continuity(report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text;files={}
     for match in re.finditer(r'<!-- SOURCE file="([^"]+)"[^>]*page=(\d+)[^>]*-->',text):
         files.setdefault(match.group(1),set()).add(int(match.group(2)))
     for source,pages in files.items():
         missing=sorted(set(range(min(pages),max(pages)+1))-pages)
         results.append(create_result("格式","提取页面索引-"+source,passed=None,description="物理页索引供定位；印刷页码须当前agent回原页核查。索引缺口："+str(missing),source_file=source,context=str(sorted(pages))))
 
-def check_unit_consistency(report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig")
+def check_unit_consistency(report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text
     units=[m.group(0) for m in re.finditer(r"单位\s*[:：]\s*(?:人民币)?\s*(?:百万元|万元|千元|元)",text)]
     results.append(create_result("格式","金额单位定位",passed=None,description="声明须绑定对应表格；不同表使用不同单位不当然错误" if units else "未提取到单位声明，不能记为通过",context="；".join(units)))
 
 TYPO_WORDS={"先讲先出":"先进先出","其本":"基本","员债":"负债","所有都权益":"所有者权益","润表":"利润表","计报告":"审计报告","资负债表":"资产负债表","现金流理表":"现金流量表","财国报表":"财务报表","合计师事务所":"会计师事务所","特殊普通合饮":"特殊普通合伙","财务报麦":"财务报告","审诉报告":"审计报告"}
 
-def check_typos(report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig")
+def check_typos(report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text
     for wrong,right in TYPO_WORDS.items():
         for match in re.finditer(re.escape(wrong),text):
             # 仅排除同一处完整正确词，不能屏蔽其他位置的错字。
@@ -264,21 +264,21 @@ def check_typos(report_md,results):
             context=text[max(0,match.start()-30):match.end()+30]
             results.append(create_result("文本","疑似错别字-"+str(match.start()),passed=None,description=wrong+" → "+right+"；须当前agent回原文确认",context=context,source_location="字符"+str(match.start()),**_marker(text,match.start())))
 
-def check_company_consistency(extracted_tables,report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig")
+def check_company_consistency(extracted_tables,report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text
     matches=list(re.finditer(r"编制单位\s*[:：]\s*([^\n|]+)",text))
     if not matches:
         results.append(create_result("格式","主体名称待定位",passed=None,description="未找到结构化编制单位；由当前agent识别抬头、报表主体和关联方，不按全文出现频率猜主体"))
     for match in matches:
         results.append(create_result("格式","编制单位-"+str(match.start()),passed=None,description="核对主体身份位置，正文关联方名称不应混入比较",context=match.group(0),source_location="字符"+str(match.start()),**_marker(text,match.start())))
 
-def check_note_number_continuity(report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig")
+def check_note_number_continuity(report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text
     headings=[m.group(0) for m in re.finditer(r"(?m)^\s*(?:附注[一二三四五六七八九十]+[、.]|[（(]\d+[）)]|\d+[、.])[^\n]{0,50}",text)]
     results.append(create_result("格式","附注编号待分组核查",passed=None,description="需区分章节、子项、续表及比较期，再判断编号连续和引用对应；未匹配不代表通过",context="\n".join(headings)))
 
-def check_firm_consistency(report_md,results):
-    text=Path(report_md).read_text(encoding="utf-8-sig")
+def check_firm_consistency(report_md,results,report_text=None):
+    text=Path(report_md).read_text(encoding="utf-8-sig") if report_text is None else report_text
     names=[m.group(0) for m in re.finditer(r"[^\s,，。；;\n|]{1,40}会计师事务所(?:[（(][^）)\n]{1,15}[）)])?",text)]
     results.append(create_result("格式","事务所及文号待核查",passed=None,description="核对正文、签字和盖章处的事务所名称及报告文号；其他报告引用须单独区分",context="；".join(names)))
 
@@ -329,10 +329,11 @@ def main(argv=None):
         if "勾稽" in selected:
             if statements:run_l1_checks(statements,results,table_path)
             else:results.append(create_result("报表间","四表未提取",description="需当前agent生成manifest并精确取数；附注-only应有明确不适用结论"))
+        report_text=report_path.read_text(encoding="utf-8-sig") if selected.intersection(("格式","文本")) else None
         if "格式" in selected:
-            check_page_continuity(report_path,results);check_unit_consistency(report_path,results)
-            check_company_consistency(table_path,report_path,results);check_note_number_continuity(report_path,results);check_firm_consistency(report_path,results)
-        if "文本" in selected:check_typos(report_path,results)
+            check_page_continuity(report_path,results,report_text);check_unit_consistency(report_path,results,report_text)
+            check_company_consistency(table_path,report_path,results,report_text);check_note_number_continuity(report_path,results,report_text);check_firm_consistency(report_path,results,report_text)
+        if "文本" in selected:check_typos(report_path,results,report_text)
         if args.scan and "横加竖加" in selected:
             for table in tables:
                 results.extend(code_vertical_check(table));results.extend(code_horizontal_check(table))

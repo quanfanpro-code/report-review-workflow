@@ -63,10 +63,12 @@ def guard_outputs(directory,*outputs,allow_names=()):
         protected.update(Path(f["path"]).resolve() for f in load_json(extracted).get("files",[]) if f.get("path"))
     if any(Path(p).resolve() in protected for p in outputs):raise ValueError("输出不能覆盖原件、输入或进度")
 
-def verify_sources(data):
+def verify_sources(data,allow_source_drift=False):
     for source in data.get("meta",{}).get("source_files",[]):
         path=Path(source["path"])
         if not path.is_file() or not source.get("sha256") or fingerprint(path)!=source["sha256"]:
+            if allow_source_drift:
+                continue
             raise ValueError("原始来源变化或缺失，旧结论已失效："+str(path))
 
 def save_json(path, data):

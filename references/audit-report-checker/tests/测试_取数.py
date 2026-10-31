@@ -1,4 +1,4 @@
-﻿import importlib
+import importlib
 import json
 import sys
 from pathlib import Path
@@ -67,6 +67,43 @@ def test_Excel公式缺缓存明确登记(验证目录, monkeypatch):
     data=json.loads((out/"extracted_tables.json").read_text(encoding="utf-8-sig"))
     assert any("缓存" in x.get("reason","") for x in data["pending"])
     assert data["tables"][0]["rows"][1][1] is None
+
+def test_隐藏工作表不作为复核资料(验证目录, monkeypatch):
+    from openpyxl import Workbook
+    import parse_report
+    wb=Workbook(); visible=wb.active; visible.title="报出报表"
+    visible.append(["项目","本期"]); visible.append(["经营活动现金流量净额","100"])
+    hidden=wb.create_sheet("现补表"); hidden.sheet_state="hidden"
+    hidden.append(["项目","本期"]); hidden.append(["经营活动现金流量净额","0"])
+    source=验证目录/"报表.xlsx"; wb.save(source)
+    out=验证目录/"提取"
+    monkeypatch.setattr(sys,"argv",["parse_report.py",str(source),"-o",str(out)])
+    parse_report.main()
+    data=json.loads((out/"extracted_tables.json").read_text(encoding="utf-8-sig"))
+    assert [t.get("sheet") for t in data["tables"]] == ["报出报表"]
+    assert all(t.get("sheet") != "现补表" for t in data["tables"])
+    assert any(x.get("sheet") == "现补表" and "隐藏" in x.get("reason","") for x in data["pending"])
+
+def test_隐藏行与隐藏列不读取(验证目录, monkeypatch):
+    from openpyxl import Workbook
+    import parse_report
+    wb=Workbook(); ws=wb.active; ws.title="现流表"
+    ws.append(["项目","本期","内部列"])
+    ws.append(["经营活动现金流量净额","100","999"])
+    ws.append(["隐藏行内容","0","888"])
+    ws.row_dimensions[3].hidden=True
+    ws.column_dimensions["C"].hidden=True
+    source=验证目录/"报表.xlsx"; wb.save(source)
+    out=验证目录/"提取"
+    monkeypatch.setattr(sys,"argv",["parse_report.py",str(source),"-o",str(out)])
+    parse_report.main()
+    data=json.loads((out/"extracted_tables.json").read_text(encoding="utf-8-sig"))
+    text=json.dumps(data,ensure_ascii=False)
+    assert "隐藏行内容" not in text
+    assert "888" not in text
+    assert "999" not in text
+    assert "100" in text
+    assert any("隐藏" in x.get("reason","") for x in data["pending"])
 
 def test_图片只登记待识别不自动上传(验证目录, monkeypatch):
     import pymupdf as fitz, parse_report

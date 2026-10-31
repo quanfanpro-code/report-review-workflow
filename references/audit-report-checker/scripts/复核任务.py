@@ -1,4 +1,4 @@
-﻿"""当前agent的本地资料队列；本工具不调用任何模型。"""
+"""当前agent的本地资料队列；本工具不调用任何模型。"""
 import argparse
 import json
 from pathlib import Path
@@ -123,8 +123,8 @@ def init_review(input_dir,context_window,scope,check_types=None):
     save_json(state_path,state)
     return state
 
-def next_batch(input_dir,max_chars=None):
-    state=_load(input_dir)
+def next_batch(input_dir,max_chars=None,state=None):
+    if state is None:state=_load(input_dir)
     limit=LIMITS[state["context_window"]] if max_chars is None else max_chars
     if type(limit) is not int or not 6000<=limit<=LIMITS[state["context_window"]]:raise ValueError("批次材料上限无效")
     selected=[];parts=[];size=0
@@ -144,7 +144,7 @@ def submit_batch(input_dir,batch_result):
     if batch_id in state["batches"]:
         if state["batches"][batch_id]!=digest:raise ValueError("同批次提交内容冲突")
         return state
-    batch=next_batch(directory)
+    batch=next_batch(directory,state=state)
     answers=batch_result.get("results",[])
     if batch_id!=batch["batch_id"] or sorted(r.get("check_id","") for r in answers)!=sorted(batch["check_ids"]) or not answers:raise ValueError("回填范围必须与当前批次完整对应")
     objects={o["check_id"]:o for o in state["objects"]}
@@ -204,8 +204,8 @@ def submit_batch(input_dir,batch_result):
     save_json(directory/STATE,state)
     return state
 
-def audit_coverage(input_dir):
-    state=_load(input_dir)
+def audit_coverage(input_dir,state=None):
+    if state is None:state=_load(input_dir)
     data={"meta":{"stage":"draft"},"coverage":state["coverage"],"results":list(state["results"].values())}
     return validate_report(data)
 
@@ -247,7 +247,8 @@ def main(argv=None):
             if args.output:
                 guard_outputs(args.input_dir,args.output);save_json(args.output,result)
                 result={"batch_id":result["batch_id"],"文件":str(Path(args.output).resolve()),"对象数":len(result["check_ids"])}
-        elif args.command=="回填":submit_batch(args.input_dir,load_json(args.result_file));result=audit_coverage(args.input_dir)
+        elif args.command=="回填":
+            state=submit_batch(args.input_dir,load_json(args.result_file));result=audit_coverage(args.input_dir,state=state)
         elif args.command=="覆盖":result=audit_coverage(args.input_dir)
         else:result=finalize_results(args.input_dir,args.output,args.draft)["summary"]
         print(json.dumps(result,ensure_ascii=False,default=str));return 0

@@ -12,7 +12,8 @@
       "id": "audit-report-checker",
       "original_path": "D:/BaiduSyncdisk/workbuddy skills/audit-report-checker",
       "local_path": "references/audit-report-checker",
-      "synced_at": "2026-10-30",
+      "synced_at": "2026-10-31",
+      "upstream_version": "3.0.0",
       "license": "AGPL-3.0",
       "notes": "docs/ 大样本未搬；文字留痕见 docs/upstream-records/audit-report-checker/"
     },
